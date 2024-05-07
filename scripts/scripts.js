@@ -10,6 +10,34 @@ for (const seat of allSeat) {
         const seatName = event.target.innerText;
 
 
+
+        //total selected seat
+        const totalSelectedSeat = document.getElementById('selected-seat-count').innerText;
+        if (totalSelectedSeat < 4) {
+            const convertedSelectedSeat = parseInt(totalSelectedSeat);
+            document.getElementById('selected-seat-count').innerText = convertedSelectedSeat + 1;
+            //selected seat background
+            event.target.style.backgroundColor = '#1DD100';
+            event.target.style.color = 'white';
+        }
+        else {
+            alert("You can't book more than 4 seats.");
+            return
+        }
+
+        //total seat left
+        const totalSeat = document.getElementById('total-seat').innerText;
+        if (totalSeat > 0) {
+            const convertedTotalSeat = parseInt(totalSeat);
+            document.getElementById('total-seat').innerText = convertedTotalSeat - 1;
+        }
+        else {
+            alert('Seat not available');
+            return;
+        }
+
+
+        //selected seat added
         const div = document.createElement('div');
         div.classList.add('flex', 'justify-between', 'pt-2');
         const p1 = document.createElement('p');
@@ -36,6 +64,7 @@ for (const seat of allSeat) {
 
 
         //Update grand total
+
 
 
     })
