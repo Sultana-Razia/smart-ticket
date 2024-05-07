@@ -9,7 +9,7 @@ for (const seat of allSeat) {
     seat.addEventListener('click', function (event) {
         const seatName = event.target.innerText;
 
-
+        event.target.setAttribute("disabled", false);
 
         //total selected seat
         const totalSelectedSeat = document.getElementById('selected-seat-count').innerText;
@@ -58,16 +58,36 @@ for (const seat of allSeat) {
         // Update total price
         const price = document.getElementById('price').innerText;
         const totalPrice = document.getElementById('total-price').innerText;
-        const sum = parseInt(price) + parseInt(totalPrice);
+        const convertedTotalPrice = parseInt(totalPrice);
+        const sum = parseInt(price) + convertedTotalPrice;
         document.getElementById('total-price').innerText = sum;
 
 
 
         //Update grand total
-
+        grandTotal();
 
 
     })
 
 
+}
+
+
+function grandTotal(coupon) {
+    const totalPrice = document.getElementById('total-price').innerText;
+    const convertedTotalPrice = parseInt(totalPrice);
+    const couponCode = document.getElementById('coupon-code').value;
+    if (coupon) {
+        if (couponCode == 'new15') {
+        }
+        else if (couponCode == 'couple20') {
+            const discount = convertedTotalPrice * 0.2;
+            document.getElementById('grand-total').innerText = convertedTotalPrice - discount;
+        }
+
+    }
+    else {
+        document.getElementById('grand-total').innerText = convertedTotalPrice;
+    }
 }
