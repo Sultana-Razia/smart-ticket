@@ -1,5 +1,5 @@
 function buyTicket() {
-    console.log('buy');
+    window.location.href = '#ticketSection';
 }
 
 const allSeat = document.getElementsByClassName('all-seat');
@@ -80,10 +80,15 @@ function grandTotal(coupon) {
     const couponCode = document.getElementById('coupon-code').value;
     if (coupon) {
         if (couponCode == 'new15') {
+            const discount = convertedTotalPrice * 0.15;
+            document.getElementById('grand-total').innerText = convertedTotalPrice - discount;
         }
         else if (couponCode == 'couple20') {
             const discount = convertedTotalPrice * 0.2;
             document.getElementById('grand-total').innerText = convertedTotalPrice - discount;
+        }
+        else {
+            alert('Please enter a valid coupon')
         }
 
     }

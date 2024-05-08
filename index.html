@@ -47,7 +47,8 @@
                     The <br> integrated testing
                     features
                     allow for a streamlined .</p>
-                <button class="btn w-[170px] border-none bg-[#1DD100] text-[#030712] font-bold text-xl mx-auto">
+                <button onclick="buyTicket()"
+                    class="btn w-[170px] border-none bg-[#1DD100] text-[#030712] font-bold text-xl mx-auto">
                     Buy Tickets
                 </button>
             </div>
@@ -149,7 +150,8 @@
         </section>
 
         <!-- ticket Section -->
-        <section class="ticket-section bg-[#F7F8F8] border-t-2 border-[#1DD100] mt-28 rounded-[88px]">
+        <section id="ticketSection"
+            class="ticket-section bg-[#F7F8F8] border-t-2 border-[#1DD100] mt-28 rounded-[88px]">
             <h1 class="text-[#030712] font-bold text-5xl text-center mt-32">P.H Paribahan</h1>
             <p class="text-[#03071299] text-center text-xl mt-6">Yes, you can run unit tests and view the results
                 directly
@@ -335,32 +337,37 @@
                         </div>
 
                         <div class="form font-inter">
-                            <label class="py-4" for="">
-                                <p class="text-[#030712] font-semibold text-base my-4">Passenger Name*</p>
-                                <input class="py-5 pl-6 rounded-lg w-full border-2 border-[#0307121A] text-[#03071266]"
-                                    type="text" placeholder="Enter Your Name" name="" id="">
-                            </label>
-                            <label class="py-4" for="">
-                                <p class="text-[#030712] font-semibold text-base my-4">Phone Number*</p>
-                                <input class="py-5 pl-6 rounded-lg w-full border-2 border-[#0307121A] text-[#03071266]"
-                                    type="number" name="" id="" placeholder="Enter Your Phone Number">
-                            </label>
-                            <label class="py-4" for="">
-                                <p class="text-[#030712] font-semibold text-base my-4">Email ID</p>
-                                <input class="py-5 pl-6 rounded-lg w-full border-2 border-[#0307121A] text-[#03071266]"
-                                    type="email" name="" id="" placeholder="Enter Your Email id">
-                            </label>
+                            <form action="">
+                                <label class="py-4" for="passenger_name">
+                                    <p class="text-[#030712] font-semibold text-base my-4">Passenger Name*</p>
+                                    <input
+                                        class="py-5 pl-6 rounded-lg w-full border-2 border-[#0307121A] text-[#03071266]"
+                                        type="text" placeholder="Enter Your Name" name="" id="passenger_name" required>
+                                </label>
+                                <label class="py-4" for="">
+                                    <p class="text-[#030712] font-semibold text-base my-4">Phone Number*</p>
+                                    <input
+                                        class="py-5 pl-6 rounded-lg w-full border-2 border-[#0307121A] text-[#03071266]"
+                                        type="number" name="" id="" placeholder="Enter Your Phone Number" required>
+                                </label>
+                                <label class="py-4" for="">
+                                    <p class="text-[#030712] font-semibold text-base my-4">Email ID</p>
+                                    <input
+                                        class="py-5 pl-6 rounded-lg w-full border-2 border-[#0307121A] text-[#03071266]"
+                                        type="email" name="" id="" placeholder="Enter Your Email id" required>
+                                </label>
 
-                            <div class="my-6">
-                                <button onclick="my_modal_5.showModal()"
-                                    class="btn text-white bg-[#1DD100] font-extrabold text-xl w-full text-center rounded-2xl border-none">
-                                    Submit
-                                </button>
-                            </div>
-                            <div class="flex justify-between pb-1 underline text-[#03071299] font-inter text-base">
-                                <small>Terms and Conditions</small>
-                                <small>Cancellation Policy</small>
-                            </div>
+                                <div class="my-6">
+                                    <button onclick="my_modal_5.showModal()" type="submit"
+                                        class="btn text-white bg-[#1DD100] font-extrabold text-xl w-full text-center rounded-2xl border-none">
+                                        Submit
+                                    </button>
+                                </div>
+                                <div class="flex justify-between pb-1 underline text-[#03071299] font-inter text-base">
+                                    <small>Terms and Conditions</small>
+                                    <small>Cancellation Policy</small>
+                                </div>
+                            </form>
                         </div>
 
                     </div>
@@ -430,6 +437,7 @@
                 </div>
             </div>
         </footer>
+
     </main>
 
     <script src="scripts/scripts.js"></script>
